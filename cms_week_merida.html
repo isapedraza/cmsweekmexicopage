@@ -1,16 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CMS Week – Mérida, Yucatán 2026</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="cms_week_merida.css">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">CMS Week</div>
+  <a class="nav-logo" href="#home" aria-label="Ir al inicio">
+    <img src="Logos/logo1.png" alt="CMS Week">
+  </a>
   <div class="nav-links">
     <a href="#about">Acerca de</a>
     <a href="#agenda">Agenda</a>
@@ -19,162 +22,160 @@
   </div>
 </nav>
 
-<div class="hero">
+<div class="hero" id="home">
 
-  <svg class="hero-svg-bg" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <svg class="hero-svg-bg" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <!-- Clip: zona FUERA del triángulo de la pirámide (lo que asoma sobre ella) -->
-    <clipPath id="showAbovePyramid">
-      <polygon points="0,0 1440,0 1440,860 0,860 0,0 720,168 1170,530 270,530 720,168" fill-rule="evenodd"/>
+    <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#040A16"/>
+      <stop offset="52%" stop-color="#071A2B"/>
+      <stop offset="100%" stop-color="#031015"/>
+    </linearGradient>
+    <radialGradient id="heroGlowTop" cx="0.52" cy="0.08" r="0.72">
+      <stop offset="0%" stop-color="#17496A" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#17496A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heroMist" cx="0.5" cy="1" r="0.95">
+      <stop offset="0%" stop-color="#1C7458" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#1C7458" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pyramidLeftFace" x1="0.12" y1="0.15" x2="0.88" y2="0.92">
+      <stop offset="0%" stop-color="#113E2D"/>
+      <stop offset="100%" stop-color="#0A2218"/>
+    </linearGradient>
+    <linearGradient id="pyramidRightFace" x1="0.1" y1="0.08" x2="0.95" y2="0.92">
+      <stop offset="0%" stop-color="#1A5A3F"/>
+      <stop offset="100%" stop-color="#0D2F22"/>
+    </linearGradient>
+    <linearGradient id="heroGround" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A2A22" stop-opacity="0.70"/>
+      <stop offset="100%" stop-color="#050D0E" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="blurHeavy" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <clipPath id="pyramidBody">
+      <polygon points="720,166 1170,548 270,548"/>
     </clipPath>
-    <!-- Clip: zona DENTRO del triángulo (lo que queda oculto detrás) -->
-    <clipPath id="showBehindPyramid">
-      <polygon points="720,168 1170,530 270,530"/>
-    </clipPath>
+    <radialGradient id="detectorAura" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#62D8FF" stop-opacity="0.24"/>
+      <stop offset="42%" stop-color="#1EDB9A" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#1EDB9A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pyramidGoldEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5C842" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#58DFA8" stop-opacity="0.18"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-
-  <!-- CIELO -->
-  <rect width="1440" height="860" fill="#04080F"/>
-  <rect x="0" y="480" width="1440" height="55"  fill="rgba(18,55,35,0.30)"/>
-  <rect x="0" y="525" width="1440" height="335" fill="#060E0A"/>
-
-  <!-- Estrellas -->
-  <g fill="#fff">
-    <circle cx="55"   cy="28"  r="0.9" opacity="0.85"/><circle cx="130"  cy="52"  r="1.2" opacity="0.70"/>
-    <circle cx="220"  cy="16"  r="0.8" opacity="0.90"/><circle cx="310"  cy="40"  r="1.1" opacity="0.65"/>
-    <circle cx="400"  cy="10"  r="1.0" opacity="0.80"/><circle cx="490"  cy="34"  r="0.7" opacity="0.75"/>
-    <circle cx="580"  cy="20"  r="1.3" opacity="0.60"/><circle cx="660"  cy="48"  r="0.9" opacity="0.85"/>
-    <circle cx="750"  cy="8"   r="1.1" opacity="0.70"/><circle cx="840"  cy="36"  r="0.8" opacity="0.90"/>
-    <circle cx="930"  cy="18"  r="1.2" opacity="0.65"/><circle cx="1020" cy="44"  r="0.9" opacity="0.80"/>
-    <circle cx="1110" cy="12"  r="1.0" opacity="0.75"/><circle cx="1200" cy="38"  r="0.7" opacity="0.60"/>
-    <circle cx="1300" cy="22"  r="1.2" opacity="0.85"/><circle cx="1390" cy="50"  r="0.9" opacity="0.70"/>
-    <circle cx="90"   cy="80"  r="0.8" opacity="0.60"/><circle cx="185"  cy="68"  r="1.1" opacity="0.75"/>
-    <circle cx="275"  cy="88"  r="0.9" opacity="0.80"/><circle cx="365"  cy="72"  r="1.0" opacity="0.65"/>
-    <circle cx="455"  cy="90"  r="0.8" opacity="0.85"/><circle cx="545"  cy="62"  r="1.2" opacity="0.70"/>
-    <circle cx="635"  cy="82"  r="0.9" opacity="0.60"/><circle cx="815"  cy="92"  r="0.8" opacity="0.80"/>
-    <circle cx="905"  cy="58"  r="1.0" opacity="0.65"/><circle cx="995"  cy="84"  r="0.9" opacity="0.85"/>
-    <circle cx="1085" cy="66"  r="1.2" opacity="0.70"/><circle cx="1175" cy="88"  r="0.8" opacity="0.60"/>
-    <circle cx="1265" cy="74"  r="1.1" opacity="0.75"/><circle cx="1355" cy="60"  r="0.9" opacity="0.80"/>
-    <circle cx="160"  cy="105" r="0.8" opacity="0.85"/><circle cx="480"  cy="110" r="0.9" opacity="0.60"/>
-    <circle cx="670"  cy="118" r="1.0" opacity="0.75"/><circle cx="860"  cy="108" r="0.8" opacity="0.80"/>
-    <circle cx="1050" cy="122" r="1.2" opacity="0.65"/><circle cx="1240" cy="112" r="0.9" opacity="0.85"/>
+  <rect width="1440" height="860" fill="url(#heroSky)"/>
+  <ellipse cx="725" cy="120" rx="760" ry="220" fill="url(#heroGlowTop)" filter="url(#blurHeavy)"/>
+  <ellipse cx="720" cy="640" rx="820" ry="180" fill="url(#heroMist)"/>
+  <g fill="#DCE9FF" opacity="0.74">
+    <circle cx="90" cy="48" r="1.1"/><circle cx="170" cy="24" r="0.8"/><circle cx="245" cy="74" r="1"/>
+    <circle cx="330" cy="42" r="1.1"/><circle cx="430" cy="22" r="0.8"/><circle cx="520" cy="64" r="1.2"/>
+    <circle cx="610" cy="40" r="0.9"/><circle cx="690" cy="18" r="0.8"/><circle cx="770" cy="72" r="1"/>
+    <circle cx="860" cy="34" r="0.9"/><circle cx="955" cy="62" r="1.2"/><circle cx="1042" cy="26" r="0.8"/>
+    <circle cx="1136" cy="74" r="1"/><circle cx="1228" cy="38" r="1.1"/><circle cx="1320" cy="58" r="0.9"/>
+    <circle cx="1382" cy="28" r="0.8"/><circle cx="186" cy="110" r="0.9"/><circle cx="438" cy="104" r="1"/>
+    <circle cx="694" cy="118" r="0.8"/><circle cx="960" cy="106" r="1"/><circle cx="1210" cy="108" r="0.9"/>
   </g>
-  <ellipse cx="720" cy="160" rx="680" ry="42" fill="rgba(90,120,200,0.045)"/>
+  <circle cx="1256" cy="102" r="40" fill="#EFE1A2" opacity="0.85"/>
+  <circle cx="1275" cy="92" r="34" fill="#051322"/>
+  <circle cx="1256" cy="102" r="58" fill="none" stroke="#EFE1A2" stroke-opacity="0.18"/>
 
-  <!-- Luna -->
-  <circle cx="1280" cy="100" r="44" fill="#DED080" opacity="0.82"/>
-  <circle cx="1300" cy="88"  r="37" fill="#04080F"/>
-  <circle cx="1280" cy="100" r="58" fill="none" stroke="#DED080" stroke-width="1" opacity="0.10"/>
-
-  <!-- DETECTOR — capa trasera (dentro/detrás de la pirámide, tenue) -->
-  <g transform="translate(960,185)" fill="none" opacity="0.22" clip-path="url(#showBehindPyramid)">
-    <circle cx="0" cy="0" r="130" stroke="#3A80E8" stroke-width="1.6"/>
-    <circle cx="0" cy="0" r="96"  stroke="#3A80E8" stroke-width="1.2"/>
-    <circle cx="0" cy="0" r="66"  stroke="#5AC8F0" stroke-width="1.1"/>
-    <circle cx="0" cy="0" r="38"  stroke="#FFD700" stroke-width="1.8"/>
-    <line x1="-130" y1="0"    x2="130"  y2="0"    stroke="#3A80E8" stroke-width="0.5" opacity="0.5"/>
-    <line x1="0"    y1="-130" x2="0"    y2="130"  stroke="#3A80E8" stroke-width="0.5" opacity="0.5"/>
-    <line x1="-92"  y1="-92"  x2="92"   y2="92"   stroke="#3A80E8" stroke-width="0.3" opacity="0.3"/>
-    <line x1="92"   y1="-92"  x2="-92"  y2="92"   stroke="#3A80E8" stroke-width="0.3" opacity="0.3"/>
+  <g class="hero-constellation" fill="none" stroke-linecap="round">
+    <path class="constellation-link" d="M170,70 L330,42 L520,64 L690,18 L860,34 L1042,26 L1228,38" stroke="#C8E9FF" stroke-width="0.7" opacity="0.22"/>
+    <path class="constellation-link" d="M186,110 L438,104 L694,118 L960,106 L1210,108" stroke="#F5C842" stroke-width="0.65" opacity="0.18"/>
+    <circle cx="330" cy="42" r="2.2" fill="#DCE9FF" opacity="0.55"/>
+    <circle cx="690" cy="18" r="2.2" fill="#F5C842" opacity="0.42"/>
+    <circle cx="960" cy="106" r="2" fill="#8BFFD4" opacity="0.45"/>
+    <circle cx="1210" cy="108" r="2.4" fill="#DCE9FF" opacity="0.45"/>
   </g>
 
-  <!-- PIRÁMIDE encima del detector trasero -->
-  <ellipse cx="720" cy="544" rx="460" ry="15" fill="rgba(0,0,0,0.45)"/>
-  <polygon points="720,168 270,530 720,530" fill="#0E2918"/>
-  <polygon points="720,168 720,530 1170,530" fill="#163520"/>
-  <line x1="666" y1="227" x2="720" y2="227" stroke="#0A1F12" stroke-width="1.5"/>
-  <line x1="612" y1="286" x2="720" y2="286" stroke="#0A1F12" stroke-width="1.5"/>
-  <line x1="558" y1="345" x2="720" y2="345" stroke="#0A1F12" stroke-width="1.5"/>
-  <line x1="504" y1="404" x2="720" y2="404" stroke="#0A1F12" stroke-width="1.5"/>
-  <line x1="450" y1="463" x2="720" y2="463" stroke="#0A1F12" stroke-width="1.5"/>
-  <line x1="720" y1="227" x2="774"  y2="227" stroke="#1A4228" stroke-width="1.5"/>
-  <line x1="720" y1="286" x2="828"  y2="286" stroke="#1A4228" stroke-width="1.5"/>
-  <line x1="720" y1="345" x2="882"  y2="345" stroke="#1A4228" stroke-width="1.5"/>
-  <line x1="720" y1="404" x2="936"  y2="404" stroke="#1A4228" stroke-width="1.5"/>
-  <line x1="720" y1="463" x2="990"  y2="463" stroke="#1A4228" stroke-width="1.5"/>
-  <polygon points="720,168 738,168 774,227 756,227"   fill="#1C4A2C"/>
-  <polygon points="756,227 774,227 828,286 810,286"   fill="#1C4A2C"/>
-  <polygon points="810,286 828,286 882,345 864,345"   fill="#1C4A2C"/>
-  <polygon points="864,345 882,345 936,404 918,404"   fill="#1C4A2C"/>
-  <polygon points="918,404 936,404 990,463 972,463"   fill="#1C4A2C"/>
-  <polygon points="972,463 990,463 1170,530 1134,530" fill="#1C4A2C"/>
-  <rect x="245" y="530" width="950" height="22" fill="#0C2015"/>
-  <rect x="220" y="552" width="1000" height="18" fill="#091A10"/>
-
-  <!-- DETECTOR — capa delantera (asomando sobre la pirámide, brillante) -->
-  <g transform="translate(960,185)" fill="none" opacity="0.90" clip-path="url(#showAbovePyramid)">
-    <circle cx="0" cy="0" r="130" stroke="#3A80E8" stroke-width="1.8"/>
-    <circle cx="0" cy="0" r="96"  stroke="#3A80E8" stroke-width="1.4"/>
-    <circle cx="0" cy="0" r="66"  stroke="#5AC8F0" stroke-width="1.2"/>
-    <circle cx="0" cy="0" r="38"  stroke="#FFD700" stroke-width="2.0"/>
-    <circle cx="0" cy="0" r="7"   fill="#FF5533" opacity="0.95"/>
-    <circle cx="0" cy="0" r="14"  fill="#FF5533" opacity="0.18"/>
-    <line x1="-130" y1="0"    x2="130"  y2="0"    stroke="#3A80E8" stroke-width="0.6" opacity="0.5"/>
-    <line x1="0"    y1="-130" x2="0"    y2="130"  stroke="#3A80E8" stroke-width="0.6" opacity="0.5"/>
-    <line x1="-92"  y1="-92"  x2="92"   y2="92"   stroke="#3A80E8" stroke-width="0.35" opacity="0.3"/>
-    <line x1="92"   y1="-92"  x2="-92"  y2="92"   stroke="#3A80E8" stroke-width="0.35" opacity="0.3"/>
+  <g id="detectorCore" transform="translate(888,248)" fill="none" opacity="0.56">
+    <circle class="detector-ring" cx="0" cy="0" r="128" stroke="#3688EF" stroke-width="1.5"/>
+    <circle class="detector-ring" cx="0" cy="0" r="94" stroke="#4FB7F2" stroke-width="1.2" opacity="0.92"/>
+    <circle class="detector-ring" cx="0" cy="0" r="58" stroke="#FFD24A" stroke-width="1.4" opacity="0.9"/>
+    <line class="detector-axis" x1="-128" y1="0" x2="128" y2="0" stroke="#4AABFF" stroke-width="0.5"/>
+    <line class="detector-axis" x1="0" y1="-128" x2="0" y2="128" stroke="#4AABFF" stroke-width="0.5"/>
+    <line class="detector-axis" x1="-90" y1="-90" x2="90" y2="90" stroke="#4AABFF" stroke-width="0.35" opacity="0.4"/>
+    <line class="detector-axis" x1="90" y1="-90" x2="-90" y2="90" stroke="#4AABFF" stroke-width="0.35" opacity="0.4"/>
   </g>
-
-  <!-- TRAZAS estáticas -->
-  <g fill="none" stroke-linecap="round">
-    <path id="t1" d="M960,185 Q820,120 620,75"   stroke="#4AABFF" stroke-width="1.7" opacity="0.72"/>
-    <path id="t2" d="M960,185 Q860,330 700,470"  stroke="#FF7040" stroke-width="1.5" opacity="0.65"/>
-    <path id="t3" d="M960,185 Q1110,110 1320,70"  stroke="#42E0A0" stroke-width="1.4" opacity="0.68"/>
-    <path id="t4" d="M960,185 Q1130,300 1370,400" stroke="#FFD700" stroke-width="1.3" opacity="0.62"/>
-    <path id="t5" d="M960,185 Q770,170 540,200"   stroke="#CC88FF" stroke-width="1.2" opacity="0.58"/>
-    <path id="t6" d="M960,185 Q948,90 928,20"     stroke="#80D0FF" stroke-width="1.1" opacity="0.50"/>
+  <g id="dataTracks" fill="none" stroke-linecap="round">
+    <path id="trackA" class="data-track" d="M888,248 Q800,158 650,74" stroke="#59B4FF" stroke-width="1.5" opacity="0.7"/>
+    <path id="trackB" class="data-track" d="M888,248 Q844,350 742,482" stroke="#FF8C50" stroke-width="1.35" opacity="0.62"/>
+    <path id="trackC" class="data-track" d="M888,248 Q1098,152 1344,72" stroke="#56E3AF" stroke-width="1.3" opacity="0.66"/>
+    <path id="trackD" class="data-track" d="M888,248 Q1122,328 1368,374" stroke="#EBC64B" stroke-width="1.2" opacity="0.52"/>
   </g>
-
-  <!-- Puntos terminales -->
-  <circle cx="620"  cy="75"  r="3.5" fill="#4AABFF"  opacity="0.85"/>
-  <circle cx="700"  cy="470" r="3.5" fill="#FF7040"  opacity="0.85"/>
-  <circle cx="1320" cy="70"  r="3.5" fill="#42E0A0"  opacity="0.85"/>
-  <circle cx="1370" cy="400" r="3.5" fill="#FFD700"  opacity="0.85"/>
-  <circle cx="540"  cy="200" r="3.5" fill="#CC88FF"  opacity="0.85"/>
-  <circle cx="928"  cy="20"  r="3.5" fill="#80D0FF"  opacity="0.80"/>
-
-  <!-- Puntos viajeros animados -->
-  <circle r="4" fill="#4AABFF" opacity="0.95">
-    <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"><mpath href="#t1"/></animateMotion>
-    <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="0s"/>
+  <circle class="data-node" cx="650" cy="74" r="3.2" fill="#59B4FF" opacity="0.9"/>
+  <circle class="data-node" cx="742" cy="482" r="3.2" fill="#FF8C50" opacity="0.9"/>
+  <circle class="data-node" cx="1344" cy="72" r="3.2" fill="#56E3AF" opacity="0.9"/>
+  <circle class="data-node" cx="1368" cy="374" r="3.2" fill="#EBC64B" opacity="0.85"/>
+  <circle class="travel-dot" r="3.8" fill="#59B4FF" opacity="0.92">
+    <animateMotion dur="3.1s" repeatCount="indefinite" begin="0s"><mpath href="#trackA"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.1s" repeatCount="indefinite"/>
   </circle>
-  <circle r="4" fill="#FF7040" opacity="0.95">
-    <animateMotion dur="3.2s" repeatCount="indefinite" begin="0.4s"><mpath href="#t2"/></animateMotion>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.2s" repeatCount="indefinite" begin="0.4s"/>
+  <circle class="travel-dot" r="3.8" fill="#FF8C50" opacity="0.9">
+    <animateMotion dur="3.6s" repeatCount="indefinite" begin="0.5s"><mpath href="#trackB"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite" begin="0.5s"/>
   </circle>
-  <circle r="4" fill="#42E0A0" opacity="0.95">
-    <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.9s"><mpath href="#t3"/></animateMotion>
-    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0.9s"/>
+  <circle class="travel-dot" r="3.8" fill="#56E3AF" opacity="0.9">
+    <animateMotion dur="2.8s" repeatCount="indefinite" begin="1s"><mpath href="#trackC"/></animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="1s"/>
   </circle>
-  <circle r="4" fill="#FFD700" opacity="0.95">
-    <animateMotion dur="3.5s" repeatCount="indefinite" begin="1.3s"><mpath href="#t4"/></animateMotion>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.5s" repeatCount="indefinite" begin="1.3s"/>
-  </circle>
-  <circle r="4" fill="#CC88FF" opacity="0.95">
-    <animateMotion dur="2.9s" repeatCount="indefinite" begin="0.6s"><mpath href="#t5"/></animateMotion>
-    <animate attributeName="opacity" values="0;1;1;0" dur="2.9s" repeatCount="indefinite" begin="0.6s"/>
-  </circle>
-  <circle r="3.5" fill="#80D0FF" opacity="0.90">
-    <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.7s"><mpath href="#t6"/></animateMotion>
-    <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.7s"/>
-  </circle>
-
-  <!-- Selva -->
-  <ellipse cx="120"  cy="565" rx="140" ry="42" fill="#071410"/>
-  <ellipse cx="370"  cy="570" rx="120" ry="36" fill="#06120E"/>
-  <ellipse cx="1100" cy="570" rx="130" ry="38" fill="#06120E"/>
-  <ellipse cx="1340" cy="562" rx="150" ry="44" fill="#071410"/>
-  <ellipse cx="50"   cy="555" rx="80"  ry="32" fill="#091810"/>
-  <ellipse cx="1420" cy="558" rx="90"  ry="34" fill="#091810"/>
-  <rect x="0" y="575" width="1440" height="285" fill="#040C08"/>
-  <ellipse cx="1280" cy="600" rx="30" ry="6" fill="#DED080" opacity="0.06"/>
-
+  <ellipse cx="720" cy="562" rx="472" ry="18" fill="#010A09" opacity="0.58"/>
+  <polygon points="720,166 270,548 720,548" fill="url(#pyramidLeftFace)"/>
+  <polygon points="720,166 720,548 1170,548" fill="url(#pyramidRightFace)"/>
+  <g clip-path="url(#pyramidBody)" opacity="0.34">
+    <line x1="300" y1="226" x2="1140" y2="226" stroke="#0D3123" stroke-width="1.4"/>
+    <line x1="300" y1="278" x2="1140" y2="278" stroke="#0D3123" stroke-width="1.4"/>
+    <line x1="300" y1="330" x2="1140" y2="330" stroke="#0D3123" stroke-width="1.4"/>
+    <line x1="300" y1="382" x2="1140" y2="382" stroke="#0D3123" stroke-width="1.4"/>
+    <line x1="300" y1="434" x2="1140" y2="434" stroke="#0D3123" stroke-width="1.4"/>
+    <line x1="300" y1="486" x2="1140" y2="486" stroke="#0D3123" stroke-width="1.4"/>
+  </g>
+  <g class="maya-circuit" clip-path="url(#pyramidBody)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M430,514 H500 V492 H560 V470 H620" stroke="#F5C842" stroke-width="1" opacity="0.20"/>
+    <path d="M1020,514 H960 V492 H900 V470 H840" stroke="#82F2C4" stroke-width="1" opacity="0.20"/>
+    <path d="M590,402 H658 V380 H708" stroke="#F5C842" stroke-width="0.9" opacity="0.17"/>
+    <path d="M850,402 H782 V380 H732" stroke="#82F2C4" stroke-width="0.9" opacity="0.17"/>
+  </g>
+  <g class="pyramid-circuit" clip-path="url(#pyramidBody)" fill="none" stroke-linecap="round" filter="url(#softGlow)">
+    <path d="M888,248 L956,330 L1084,505" stroke="url(#pyramidGoldEdge)" stroke-width="2.2" opacity="0.42"/>
+    <path d="M888,248 L802,346 L648,526" stroke="#58DFA8" stroke-width="1.6" opacity="0.26"/>
+    <path d="M888,248 L888,548" stroke="#F5C842" stroke-width="1.1" opacity="0.22"/>
+  </g>
+  <g class="pyramid-portal" transform="translate(888,248)" fill="none" filter="url(#softGlow)">
+    <circle r="172" fill="url(#detectorAura)" opacity="0.85"/>
+    <circle class="portal-sweep" r="152" stroke="#62D8FF" stroke-width="1.2" stroke-opacity="0.46"/>
+    <circle class="portal-sweep portal-sweep--gold" r="116" stroke="#F5C842" stroke-width="1" stroke-opacity="0.34"/>
+    <circle r="62" stroke="#8BFFD4" stroke-width="0.8" stroke-opacity="0.28"/>
+    <circle r="4" fill="#F5C842" opacity="0.85"/>
+  </g>
+  <path class="pyramid-trace" d="M720,166 L1024,424 L1170,548" fill="none" stroke="#2D8E65" stroke-opacity="0.24" stroke-width="14" stroke-linecap="round"/>
+  <path class="pyramid-trace" d="M720,166 L920,348 L1058,478" fill="none" stroke="#66D4A5" stroke-opacity="0.12" stroke-width="8" stroke-linecap="round"/>
+  <rect x="238" y="548" width="964" height="20" fill="#082116"/>
+  <rect x="214" y="568" width="1012" height="22" fill="#06170F"/>
+  <rect x="0" y="560" width="1440" height="300" fill="url(#heroGround)"/>
+  <ellipse cx="124" cy="590" rx="168" ry="48" fill="#05140F"/>
+  <ellipse cx="382" cy="598" rx="154" ry="44" fill="#06140E"/>
+  <ellipse cx="1088" cy="598" rx="154" ry="46" fill="#06140E"/>
+  <ellipse cx="1338" cy="588" rx="174" ry="52" fill="#05140F"/>
+  <ellipse cx="724" cy="612" rx="360" ry="36" fill="#164B3A" opacity="0.11"/>
   </svg>
 
   <div class="hero-svg-overlay"></div>
+  <div class="hero-starfield" aria-hidden="true"></div>
 
   <p class="hero-eyebrow">Compact Muon Solenoid · CERN</p>
-  <h1 class="hero-title">CMS<span class="accent">—</span><br>WEEK</h1>
+  <h1 class="hero-title">CMS<span class="accent">-</span>WEEK</h1>
   <p class="hero-sub">Americas · Mexico</p>
   <div class="hero-date-badge">
     <span class="hero-dot"></span>
@@ -201,15 +202,15 @@
     </div>
     <div class="about-stats">
       <div class="stat-card">
-        <div class="stat-num">500<span class="stat-plus">+</span></div>
+        <div class="stat-num"><span class="stat-counter" data-target="500">500</span><span class="stat-plus">+</span></div>
         <div class="stat-label">Participantes esperados</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">40<span class="stat-plus">+</span></div>
+        <div class="stat-num"><span class="stat-counter" data-target="40">40</span><span class="stat-plus">+</span></div>
         <div class="stat-label">Países representados</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">5</div>
+        <div class="stat-num"><span class="stat-counter" data-target="5">5</span></div>
         <div class="stat-label">Días de sesiones científicas</div>
       </div>
     </div>
@@ -218,111 +219,346 @@
 
 <div class="divider"></div>
 
-<div class="agenda-section">
-  <div class="agenda-inner">
-    <p class="section-label">Programa</p>
-    <h2 class="section-title">Agenda 2026</h2>
-    <div class="agenda-grid">
-      <div class="agenda-card">
-        <div class="agenda-day">Lun</div>
-        <div class="agenda-date">07 Dic 2026</div>
-        <ul class="agenda-items">
-          <li><span class="agenda-dot">▸</span> Registro y bienvenida</li>
-          <li><span class="agenda-dot">▸</span> Apertura institucional</li>
-          <li><span class="agenda-dot">▸</span> Plenaria: Estado de CMS</li>
-          <li><span class="agenda-dot">▸</span> Recepción de bienvenida</li>
-        </ul>
+<section id="agenda" class="agenda26 relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute inset-0 [background-image:radial-gradient(rgba(6,78,59,0.09)_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="agenda26-particles absolute inset-0" aria-hidden="true">
+      <span class="agenda26-particle"></span>
+      <span class="agenda26-particle"></span>
+      <span class="agenda26-particle"></span>
+      <span class="agenda26-particle"></span>
+      <span class="agenda26-particle"></span>
+      <span class="agenda26-particle"></span>
+    </div>
+  </div>
+
+  <header class="relative z-10 overflow-hidden bg-[#064e3b] text-slate-100">
+    <div class="absolute inset-0 opacity-[0.14]" aria-hidden="true">
+      <svg class="h-full w-full" viewBox="0 0 1200 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="agendaMayaPattern" width="120" height="120" patternUnits="userSpaceOnUse">
+            <path d="M10 10H110V30H30V110H10Z" fill="none" stroke="white" stroke-opacity="0.55" stroke-width="2"/>
+            <path d="M50 50H90V90H50Z" fill="none" stroke="white" stroke-opacity="0.45" stroke-width="2"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="260" fill="url(#agendaMayaPattern)"/>
+      </svg>
+    </div>
+
+    <div class="relative mx-auto max-w-6xl px-4 pb-14 pt-14 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#10b981] sm:text-sm">CERN Collaboration</p>
+      <h2 class="mt-2 text-4xl font-extrabold uppercase tracking-[0.08em] text-white sm:text-5xl md:text-6xl">Agenda <span class="text-[#10b981]">2026</span></h2>
+      <p class="mt-5 flex flex-wrap items-center gap-2 text-sm font-light text-slate-100/85 sm:text-base">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-white/10">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true">
+            <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2z"/>
+          </svg>
+        </span>
+        <span>Mérida, Yucatán, México • Centro de Convenciones Siglo XXI</span>
+      </p>
+
+      <div class="mt-7 inline-flex items-center gap-3 rounded-2xl border border-white/30 bg-white/10 px-5 py-3 text-sm shadow-[0_14px_40px_rgba(2,6,23,0.18)] backdrop-blur-md">
+        <span class="font-semibold uppercase tracking-[0.18em] text-[#10b981]">Próximo Evento</span>
+        <span class="h-5 w-px bg-white/35"></span>
+        <span class="font-light text-white">Diciembre 07 - 11</span>
       </div>
-      <div class="agenda-card">
-        <div class="agenda-day">Mar</div>
-        <div class="agenda-date">08 Dic 2026</div>
-        <ul class="agenda-items">
-          <li><span class="agenda-dot">▸</span> Sesiones de física Run-3</li>
-          <li><span class="agenda-dot">▸</span> Grupos de trabajo trigger</li>
-          <li><span class="agenda-dot">▸</span> Software &amp; computing</li>
-          <li><span class="agenda-dot">▸</span> Sesiones paralelas</li>
-        </ul>
-      </div>
-      <div class="agenda-card">
-        <div class="agenda-day">Mié</div>
-        <div class="agenda-date">09 Dic 2026</div>
-        <ul class="agenda-items">
-          <li><span class="agenda-dot">▸</span> Detector Upgrade HL-LHC</li>
-          <li><span class="agenda-dot">▸</span> Excursión cultural Maya</li>
-          <li><span class="agenda-dot">▸</span> Conferencia pública</li>
-          <li><span class="agenda-dot">▸</span> Cena de colaboración</li>
-        </ul>
-      </div>
-      <div class="agenda-card">
-        <div class="agenda-day">Jue</div>
-        <div class="agenda-date">10 Dic 2026</div>
-        <ul class="agenda-items">
-          <li><span class="agenda-dot">▸</span> Nuevos resultados de física</li>
-          <li><span class="agenda-dot">▸</span> Sesiones b-physics</li>
-          <li><span class="agenda-dot">▸</span> Machine Learning en HEP</li>
-          <li><span class="agenda-dot">▸</span> Sesión de pósters</li>
-        </ul>
-      </div>
-      <div class="agenda-card">
-        <div class="agenda-day">Vie</div>
-        <div class="agenda-date">11 Dic 2026</div>
-        <ul class="agenda-items">
-          <li><span class="agenda-dot">▸</span> Plenaria de cierre</li>
-          <li><span class="agenda-dot">▸</span> Resultados y perspectivas</li>
-          <li><span class="agenda-dot">▸</span> Clausura oficial</li>
-        </ul>
+    </div>
+
+    <svg class="block h-12 w-full" style="color: var(--cream);" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0,24 C160,94 420,0 600,34 C780,68 1010,20 1200,50 L1200,90 L0,90 Z" fill="currentColor"/>
+    </svg>
+  </header>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 lg:px-8 lg:pb-14">
+    <div class="relative">
+      <div class="agenda26-line hidden md:block"></div>
+
+      <div class="space-y-6 md:space-y-8">
+        <article class="group relative flex flex-col gap-4 md:grid md:grid-cols-[7rem_1.5rem_minmax(0,1fr)] md:gap-5">
+          <div class="md:pt-2 md:text-right">
+            <p class="text-4xl font-extrabold uppercase tracking-[0.18em] text-[#064e3b]">LUN</p>
+            <p class="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">07 Dic</p>
+          </div>
+          <div class="hidden md:flex md:items-start md:justify-center">
+            <span class="agenda26-node"><span class="agenda26-node-dot"></span></span>
+          </div>
+          <div class="agenda26-card group-hover:shadow-[0_20px_45px_rgba(15,23,42,0.12)]">
+            <div class="agenda26-quarter"></div>
+            <div class="agenda26-row">
+              <span class="agenda26-time agenda26-pulse">08:00</span>
+              <span class="agenda26-event agenda26-highlight">Registro y bienvenida</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">09:30</span>
+              <span class="agenda26-event">Apertura institucional</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time agenda26-pulse">11:00</span>
+              <span class="agenda26-event agenda26-highlight">Plenaria: Estado de CMS</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">18:00</span>
+              <span class="agenda26-event">Recepción de bienvenida</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col gap-4 md:grid md:grid-cols-[7rem_1.5rem_minmax(0,1fr)] md:gap-5">
+          <div class="md:pt-2 md:text-right">
+            <p class="text-4xl font-extrabold uppercase tracking-[0.18em] text-[#064e3b]">MAR</p>
+            <p class="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">08 Dic</p>
+          </div>
+          <div class="hidden md:flex md:items-start md:justify-center">
+            <span class="agenda26-node"><span class="agenda26-node-dot"></span></span>
+          </div>
+          <div class="agenda26-card group-hover:shadow-[0_20px_45px_rgba(15,23,42,0.12)]">
+            <div class="agenda26-quarter"></div>
+            <div class="agenda26-row">
+              <span class="agenda26-time agenda26-pulse">08:30</span>
+              <span class="agenda26-event agenda26-highlight">Plenaria de física Run-3</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">11:30</span>
+              <span class="agenda26-event">Grupos de trabajo de trigger</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">14:30</span>
+              <span class="agenda26-event">Software y computing</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">16:30</span>
+              <span class="agenda26-event">Sesiones paralelas</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col gap-4 md:grid md:grid-cols-[7rem_1.5rem_minmax(0,1fr)] md:gap-5">
+          <div class="md:pt-2 md:text-right">
+            <p class="text-4xl font-extrabold uppercase tracking-[0.18em] text-[#d97706]">MIE</p>
+            <p class="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-amber-700/80">09 Dic</p>
+          </div>
+          <div class="hidden md:flex md:items-start md:justify-center">
+            <span class="agenda26-node agenda26-node-social">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current text-amber-600" aria-hidden="true">
+                <path d="M12 3.5l1.5 3.6 3.9-1-1 3.9 3.6 1.5-3.6 1.5 1 3.9-3.9-1-1.5 3.6-1.5-3.6-3.9 1 1-3.9-3.6-1.5 3.6-1.5-1-3.9 3.9 1z"/>
+              </svg>
+            </span>
+          </div>
+          <div class="agenda26-card agenda26-card-social group-hover:shadow-[0_20px_45px_rgba(180,83,9,0.16)]">
+            <div class="agenda26-quarter agenda26-quarter-social"></div>
+            <div class="mb-3 inline-flex rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-amber-700">Día Social</div>
+            <div class="agenda26-row">
+              <span class="agenda26-time text-amber-700">09:00</span>
+              <span class="agenda26-event">Detector Upgrade HL-LHC</span>
+            </div>
+            <div class="agenda26-row agenda26-row-social">
+              <span class="agenda26-time text-amber-700">12:00</span>
+              <span class="agenda26-event flex items-center gap-2 font-semibold text-amber-900">
+                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-amber-700" aria-hidden="true">
+                  <path d="M3 18h18v2H3zm2-2h2v-5l2-3 2 3v5h2v-7l-4-6-4 6zm10 0h2v-4l1.8-2.4L20.6 12v4H22v-5l-3.2-4.6L15 11z"/>
+                </svg>
+                Excursión Cultural Maya
+              </span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time text-amber-700">17:00</span>
+              <span class="agenda26-event">Conferencia pública</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time text-amber-700">20:00</span>
+              <span class="agenda26-event">Cena de colaboración</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col gap-4 md:grid md:grid-cols-[7rem_1.5rem_minmax(0,1fr)] md:gap-5">
+          <div class="md:pt-2 md:text-right">
+            <p class="text-4xl font-extrabold uppercase tracking-[0.18em] text-[#064e3b]">JUE</p>
+            <p class="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">10 Dic</p>
+          </div>
+          <div class="hidden md:flex md:items-start md:justify-center">
+            <span class="agenda26-node"><span class="agenda26-node-dot"></span></span>
+          </div>
+          <div class="agenda26-card group-hover:shadow-[0_20px_45px_rgba(15,23,42,0.12)]">
+            <div class="agenda26-quarter"></div>
+            <div class="agenda26-row">
+              <span class="agenda26-time agenda26-pulse">08:30</span>
+              <span class="agenda26-event agenda26-highlight">Nuevos resultados de física</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">11:00</span>
+              <span class="agenda26-event">Sesiones B-physics</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">15:00</span>
+              <span class="agenda26-event">Machine Learning en HEP</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">18:30</span>
+              <span class="agenda26-event">Sesión de pósters</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col gap-4 md:grid md:grid-cols-[7rem_1.5rem_minmax(0,1fr)] md:gap-5">
+          <div class="md:pt-2 md:text-right">
+            <p class="text-4xl font-extrabold uppercase tracking-[0.18em] text-[#064e3b]">VIE</p>
+            <p class="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">11 Dic</p>
+          </div>
+          <div class="hidden md:flex md:items-start md:justify-center">
+            <span class="agenda26-node"><span class="agenda26-node-dot"></span></span>
+          </div>
+          <div class="agenda26-card group-hover:shadow-[0_20px_45px_rgba(15,23,42,0.12)]">
+            <div class="agenda26-quarter"></div>
+            <div class="agenda26-row">
+              <span class="agenda26-time agenda26-pulse">09:00</span>
+              <span class="agenda26-event agenda26-highlight">Plenaria de cierre</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">11:30</span>
+              <span class="agenda26-event">Resultados y perspectivas</span>
+            </div>
+            <div class="agenda26-row">
+              <span class="agenda26-time">13:00</span>
+              <span class="agenda26-event">Clausura oficial</span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </div>
-</div>
+
+</section>
 
 <div class="maya-border maya-border--flip"></div>
 
-<section id="venue">
-  <div class="venue-grid">
-    <div class="venue-img">
-      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="300" fill="#C8E6D8"/>
-        <rect width="400" height="180" fill="#87CEBC"/>
-        <circle cx="340" cy="60" r="30" fill="#F5C842" opacity="0.9"/>
-        <ellipse cx="80" cy="50" rx="40" ry="16" fill="white" opacity="0.7"/>
-        <ellipse cx="110" cy="42" rx="30" ry="14" fill="white" opacity="0.7"/>
-        <ellipse cx="200" cy="35" rx="50" ry="18" fill="white" opacity="0.6"/>
-        <polygon points="200,70 95,210 305,210" fill="#145C47"/>
-        <polygon points="200,70 155,140 245,140" fill="#1E7A5E"/>
-        <rect x="135" y="210" width="130" height="10" fill="#0F6E56"/>
-        <rect x="122" y="220" width="156" height="10" fill="#0D4A3A"/>
-        <rect x="0" y="230" width="400" height="70" fill="#1E7A5E"/>
-        <ellipse cx="60" cy="230" rx="50" ry="20" fill="#145C47"/>
-        <ellipse cx="340" cy="230" rx="55" ry="22" fill="#145C47"/>
-        <ellipse cx="20" cy="225" rx="30" ry="15" fill="#1E7A5E"/>
-        <ellipse cx="380" cy="220" rx="35" ry="18" fill="#1E7A5E"/>
-      </svg>
+<section id="venue" class="venue26">
+  <div class="venue26-shell">
+    <header class="venue26-head">
+      <p class="venue26-kicker">Sede Oficial 2026</p>
+      <h2 class="venue26-title">Mérida</h2>
+      <p class="venue26-subtitle">Yucatán</p>
+    </header>
+
+    <div class="venue26-layout">
+      <article class="venue26-copy">
+        <h3 class="venue26-bridge">Del Macrocosmos al Microcosmos</h3>
+        <p>Desde la astronomía Maya hasta el detector CMS del CERN, esta sede conecta dos formas de mirar el universo: la escala cósmica y la escala subatómica. En Yucatán, la observación del cielo fue ciencia de precisión mucho antes de la física moderna.</p>
+        <p>La CMS Week en Mérida propone ese diálogo histórico: estudiar partículas fundamentales con tecnología de frontera en una región donde la relación entre tiempo, geometría y observación astronómica ya era parte de la cultura científica local.</p>
+
+        <div class="venue26-meta-grid" aria-label="Datos logísticos de la sede">
+          <article class="venue26-meta">
+            <h4>Aeropuerto</h4>
+            <p>Internacional de Mérida (MID)</p>
+          </article>
+          <article class="venue26-meta">
+            <h4>Sede</h4>
+            <p>Centro de Convenciones Siglo XXI</p>
+          </article>
+          <article class="venue26-meta">
+            <h4>Clima</h4>
+            <p>~26°C en diciembre, seco-cálido</p>
+          </article>
+          <article class="venue26-meta">
+            <h4>Entorno</h4>
+            <p>A 2h de Chichén Itzá y zona de cenotes</p>
+          </article>
+        </div>
+      </article>
+
+      <aside class="venue26-media" aria-label="Carrusel de imágenes de Mérida y Yucatán">
+        <div class="venue26-carousel" data-venue-carousel>
+          <figure class="venue26-slide is-active">
+            <img src="Logos/merida.jpg" alt="Vista urbana de Mérida al atardecer">
+            <figcaption>Centro histórico de Mérida</figcaption>
+          </figure>
+          <figure class="venue26-slide">
+            <img src="Logos/merida.webp" alt="Panorámica de Mérida en formato webp">
+            <figcaption>Panorámica urbana de Mérida</figcaption>
+          </figure>
+          <figure class="venue26-slide">
+            <img src="Logos/merida1.jpg" alt="Arquitectura colonial en Mérida, Yucatán">
+            <figcaption>Arquitectura colonial y vida local</figcaption>
+          </figure>
+          <figure class="venue26-slide">
+            <img src="Logos/merida2.png" alt="Pirámide de Chichén Itzá en Yucatán">
+            <figcaption>Patrimonio científico y cultural Maya</figcaption>
+          </figure>
+          <figure class="venue26-slide">
+            <img src="Logos/merida3.webp" alt="Paisaje de Yucatán en formato webp">
+            <figcaption>Paisaje natural de Yucatán</figcaption>
+          </figure>
+          <figure class="venue26-slide">
+            <img src="Logos/merida5.jpg" alt="Escena representativa de Mérida y su entorno">
+            <figcaption>Mérida y su entorno regional</figcaption>
+          </figure>
+        </div>
+        <div class="venue26-thumbs" aria-label="Selecciona una imagen de la sede">
+          <button type="button" class="venue26-thumb is-active" data-venue-thumb="0" aria-label="Ver imagen 1 de 6">
+            <img src="Logos/merida.jpg" alt="">
+          </button>
+          <button type="button" class="venue26-thumb" data-venue-thumb="1" aria-label="Ver imagen 2 de 6">
+            <img src="Logos/merida.webp" alt="">
+          </button>
+          <button type="button" class="venue26-thumb" data-venue-thumb="2" aria-label="Ver imagen 3 de 6">
+            <img src="Logos/merida1.jpg" alt="">
+          </button>
+          <button type="button" class="venue26-thumb" data-venue-thumb="3" aria-label="Ver imagen 4 de 6">
+            <img src="Logos/merida2.png" alt="">
+          </button>
+          <button type="button" class="venue26-thumb" data-venue-thumb="4" aria-label="Ver imagen 5 de 6">
+            <img src="Logos/merida3.webp" alt="">
+          </button>
+          <button type="button" class="venue26-thumb" data-venue-thumb="5" aria-label="Ver imagen 6 de 6">
+            <img src="Logos/merida5.jpg" alt="">
+          </button>
+        </div>
+      </aside>
     </div>
-    <div class="venue-info">
-      <p class="section-label">Sede del evento</p>
-      <h2 class="section-title">Mérida,<br>Yucatán</h2>
-      <span class="venue-tag">México</span>
-      <p>Conocida como la Ciudad Blanca, Mérida es la capital de Yucatán, puerta de entrada a la civilización Maya y una de las ciudades más vibrantes y seguras de México.</p>
-      <p>A solo 2 horas de Chichén Itzá y con conexiones aéreas directas desde EE.UU., Europa y Latinoamérica.</p>
-      <div class="venue-details">
-        <div class="venue-detail">
-          <div class="venue-detail-icon">✈</div>
-          Aeropuerto Internacional de Mérida (MID)
-        </div>
-        <div class="venue-detail">
-          <div class="venue-detail-icon">🏛</div>
-          Centro de Convenciones Yucatán Siglo XXI
-        </div>
-        <div class="venue-detail">
-          <div class="venue-detail-icon">🌡</div>
-          Clima cálido · ~26°C en diciembre
-        </div>
-        <div class="venue-detail">
-          <div class="venue-detail-icon">🏺</div>
-          A 2h de Chichén Itzá
-        </div>
-      </div>
+
+    <div class="venue26-curiosities">
+      <article class="venue26-fact">
+        <span class="venue26-roman">I</span>
+        <h3>Impacto de Chicxulub</h3>
+        <p>El cráter de ~180 km, ubicado en la península, es una de las evidencias geológicas más estudiadas sobre eventos de extinción masiva.</p>
+      </article>
+      <article class="venue26-fact">
+        <span class="venue26-roman">II</span>
+        <h3>Alineación Estelar</h3>
+        <p>La arquitectura Maya integró observación astronómica precisa para ciclos solares y rituales, con geometrías orientadas al cielo.</p>
+      </article>
+      <article class="venue26-fact">
+        <span class="venue26-roman">III</span>
+        <h3>Cenotes</h3>
+        <p>El sistema de cenotes revela la estructura kárstica del subsuelo yucateco, clave para hidrología, clima regional y registro paleoambiental.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="partners-logos" aria-labelledby="partners-logos-title">
+  <p class="section-label">Instituciones participantes</p>
+  <h2 class="section-title" id="partners-logos-title">Universidades y colaboración</h2>
+  <div class="logos-marquee" aria-label="Carrusel automático de logos institucionales">
+    <div class="logos-track">
+      <figure class="logo-card"><img src="Logos/buap_logo.png" alt="Logo de la BUAP"></figure>
+      <figure class="logo-card"><img src="Logos/CERN-Logo.png" alt="Logo del CERN"></figure>
+      <figure class="logo-card"><img src="Logos/cinvestav_logo.png" alt="Logo del CINVESTAV"></figure>
+      <figure class="logo-card"><img src="Logos/CMSlogo_color_label_1024_May2014.png" alt="Logo de CMS"></figure>
+      <figure class="logo-card"><img src="Logos/Logo_de_la_Universidad_de_Sonora.svg-2.png" alt="Logo de la Universidad de Sonora"></figure>
+      <figure class="logo-card"><img src="Logos/Logo_Universidad_Iberoamericana.svg.png" alt="Logo de la Universidad Iberoamericana"></figure>
+      <figure class="logo-card"><img src="Logos/UADY_logo.png" alt="Logo de la UADY"></figure>
+    </div>
+    <div class="logos-track" aria-hidden="true">
+      <figure class="logo-card"><img src="Logos/buap_logo.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/CERN-Logo.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/cinvestav_logo.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/CMSlogo_color_label_1024_May2014.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/Logo_de_la_Universidad_de_Sonora.svg-2.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/Logo_Universidad_Iberoamericana.svg.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/UADY_logo.png" alt=""></figure>
     </div>
   </div>
 </section>
@@ -343,10 +579,295 @@
 </div>
 
 <footer>
-  <div class="footer-logo">CMS WEEK · México 2026</div>
+  <div class="footer-logo">
+    <img src="Logos/logo1.png" alt="CMS Week">
+  </div>
   <div class="footer-text">Mérida, Yucatán · Diciembre 2026 · cms.cern.ch</div>
   <div class="footer-text">© 2026 CMS Collaboration · CERN</div>
 </footer>
 
+<script>
+(() => {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const starfield = hero.querySelector('.hero-starfield');
+  if (!starfield) return;
+
+  const supportsFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!supportsFinePointer || prefersReducedMotion) return;
+
+  hero.classList.add('hero-interactive');
+
+  const state = { px: 0, py: 0 };
+  const target = { px: 0, py: 0 };
+  let rafId = 0;
+  let engaged = false;
+  let lastStarAt = 0;
+
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+  const starPalette = [
+    'rgba(224, 246, 255, 0.95)',
+    'rgba(171, 225, 255, 0.92)',
+    'rgba(139, 238, 210, 0.92)',
+    'rgba(245, 200, 80, 0.92)'
+  ];
+
+  const applyStyles = () => {
+    hero.style.setProperty('--hero-parallax-x', `${state.px.toFixed(2)}px`);
+    hero.style.setProperty('--hero-parallax-y', `${state.py.toFixed(2)}px`);
+  };
+
+  const animate = () => {
+    state.px += (target.px - state.px) * 0.12;
+    state.py += (target.py - state.py) * 0.12;
+    applyStyles();
+
+    const settled =
+      Math.abs(target.px - state.px) < 0.03 &&
+      Math.abs(target.py - state.py) < 0.03;
+
+    if (!engaged && settled) {
+      rafId = 0;
+      return;
+    }
+
+    rafId = window.requestAnimationFrame(animate);
+  };
+
+  const kick = () => {
+    if (!rafId) {
+      rafId = window.requestAnimationFrame(animate);
+    }
+  };
+
+  const spawnStar = (x, y) => {
+    const star = document.createElement('span');
+    star.className = 'hero-trail-star';
+
+    const size = 2 + Math.random() * 3.4;
+    const life = 650 + Math.random() * 520;
+    const driftX = (Math.random() - 0.5) * 24;
+    const driftY = -18 - Math.random() * 32;
+    const color = starPalette[Math.floor(Math.random() * starPalette.length)];
+
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    star.style.setProperty('--star-size', `${size}px`);
+    star.style.setProperty('--star-life', `${life}ms`);
+    star.style.setProperty('--star-dx', `${driftX.toFixed(1)}px`);
+    star.style.setProperty('--star-dy', `${driftY.toFixed(1)}px`);
+    star.style.setProperty('--star-color', color);
+
+    star.addEventListener('animationend', () => star.remove(), { once: true });
+    starfield.appendChild(star);
+  };
+
+  const moveTarget = (event) => {
+    const rect = hero.getBoundingClientRect();
+    const nx = clamp((event.clientX - rect.left) / rect.width, 0, 1);
+    const ny = clamp((event.clientY - rect.top) / rect.height, 0, 1);
+    const dx = nx - 0.5;
+    const dy = ny - 0.5;
+
+    target.px = dx * -18;
+    target.py = dy * -14;
+
+    const now = performance.now();
+    if (now - lastStarAt > 30) {
+      lastStarAt = now;
+      spawnStar(event.clientX - rect.left, event.clientY - rect.top);
+    }
+  };
+
+  hero.addEventListener('mouseenter', (event) => {
+    engaged = true;
+    hero.classList.add('is-engaged');
+    moveTarget(event);
+    kick();
+  });
+
+  hero.addEventListener('mousemove', (event) => {
+    moveTarget(event);
+    kick();
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    engaged = false;
+    hero.classList.remove('is-engaged');
+    target.px = 0;
+    target.py = 0;
+    kick();
+  });
+
+  applyStyles();
+})();
+
+(() => {
+  const about = document.querySelector('#about');
+  if (!about) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = Array.from(about.querySelectorAll('.stat-counter[data-target]'));
+
+  if (!prefersReducedMotion) {
+    about.classList.add('can-animate');
+  }
+
+  const formatNumber = (value) => new Intl.NumberFormat('es-MX').format(value);
+
+  const animateCounter = (counter) => {
+    if (counter.dataset.done === 'true') return;
+    counter.dataset.done = 'true';
+
+    const target = Number(counter.dataset.target);
+    if (!Number.isFinite(target)) return;
+
+    if (prefersReducedMotion) {
+      counter.textContent = formatNumber(target);
+      return;
+    }
+
+    const duration = Math.min(1800, 900 + target * 2.6);
+    const startTime = performance.now();
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const frame = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const currentValue = Math.round(target * easeOutCubic(progress));
+      counter.textContent = formatNumber(currentValue);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(frame);
+      }
+    };
+
+    window.requestAnimationFrame(frame);
+  };
+
+  const revealAbout = () => {
+    about.classList.add('is-visible');
+    counters.forEach(animateCounter);
+  };
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealAbout();
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, instance) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      revealAbout();
+      instance.unobserve(entry.target);
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(about);
+})();
+
+(() => {
+  if (!document.querySelector('nav')) return;
+
+  const body = document.body;
+  let lastY = window.scrollY;
+  let ticking = false;
+  const hideAfter = 96;
+  const deltaThreshold = 10;
+
+  const updateNavState = () => {
+    const currentY = window.scrollY;
+    const delta = currentY - lastY;
+
+    if (currentY <= 12) {
+      body.classList.remove('nav-hidden', 'nav-scrolled');
+      lastY = currentY;
+      ticking = false;
+      return;
+    }
+
+    body.classList.add('nav-scrolled');
+
+    if (delta > deltaThreshold && currentY > hideAfter) {
+      body.classList.add('nav-hidden');
+    } else if (delta < -deltaThreshold) {
+      body.classList.remove('nav-hidden');
+    }
+
+    lastY = currentY;
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateNavState);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    lastY = window.scrollY;
+  });
+
+  updateNavState();
+})();
+
+(() => {
+  const media = document.querySelector('.venue26-media');
+  const carousel = document.querySelector('[data-venue-carousel]');
+  if (!media || !carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll('.venue26-slide'));
+  const thumbs = Array.from(media.querySelectorAll('[data-venue-thumb]'));
+  if (slides.length < 2) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let activeIndex = 0;
+  let timerId = 0;
+
+  const showSlide = (nextIndex) => {
+    slides[activeIndex].classList.remove('is-active');
+    if (thumbs[activeIndex]) thumbs[activeIndex].classList.remove('is-active');
+
+    activeIndex = nextIndex;
+    slides[activeIndex].classList.add('is-active');
+    if (thumbs[activeIndex]) thumbs[activeIndex].classList.add('is-active');
+  };
+
+  const start = () => {
+    if (prefersReducedMotion) return;
+    timerId = window.setInterval(() => {
+      showSlide((activeIndex + 1) % slides.length);
+    }, 4400);
+  };
+
+  const stop = () => {
+    if (!timerId) return;
+    window.clearInterval(timerId);
+    timerId = 0;
+  };
+
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      stop();
+      showSlide(index);
+      start();
+    });
+  });
+
+  media.addEventListener('mouseenter', stop);
+  media.addEventListener('mouseleave', start);
+
+  start();
+})();
+</script>
+
 </body>
 </html>
+
+
+
+
+
