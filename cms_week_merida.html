@@ -8,17 +8,25 @@
 <link rel="stylesheet" href="cms_week_merida.css">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-lang="es">
 
 <nav>
   <a class="nav-logo" href="#home" aria-label="Ir al inicio">
     <img src="Logos/logo1.png" alt="CMS Week">
   </a>
-  <div class="nav-links">
-    <a href="#about">Acerca de</a>
-    <a href="#agenda">Agenda</a>
-    <a href="#venue">Sede</a>
-    <a href="#registro">Registro</a>
+  <div class="nav-actions">
+    <div class="nav-links">
+      <a href="#about">Acerca de</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#venue">Sede</a>
+    </div>
+    <a class="nav-feature-link" href="event-info.html">Info participantes</a>
+    <a class="nav-register-link" href="registration.html">Registro</a>
+    <button class="lang-toggle" type="button" data-language-toggle aria-label="Cambiar idioma a inglés" aria-pressed="false">
+      <span data-lang-option="es">ES</span>
+      <span class="lang-toggle-divider">/</span>
+      <span data-lang-option="en">EN</span>
+    </button>
   </div>
 </nav>
 
@@ -176,17 +184,17 @@
 
   <p class="hero-eyebrow">Compact Muon Solenoid · CERN</p>
   <h1 class="hero-title">CMS<span class="accent">-</span>WEEK</h1>
-  <p class="hero-sub">Americas · Mexico</p>
+  <p class="hero-sub">Américas · México</p>
   <div class="hero-date-badge">
     <span class="hero-dot"></span>
-    December 7 - 11, 2026 · Mérida, Yucatán, México
+    7 al 11 de diciembre de 2026 · Mérida, Yucatán, México
     <span class="hero-dot"></span>
   </div>
-  <button class="hero-cta" onclick="document.getElementById('registro').scrollIntoView({behavior:'smooth'})">Registrarme ahora</button>
+  <a class="hero-cta" href="registration.html">Registrarme ahora</a>
 
   <div class="scroll-hint">
     <div class="scroll-line"></div>
-    scroll
+    bajar
   </div>
 </div>
 
@@ -246,7 +254,7 @@
     </div>
 
     <div class="relative mx-auto max-w-6xl px-4 pb-14 pt-14 sm:px-6 lg:px-8">
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#10b981] sm:text-sm">CERN Collaboration</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#10b981] sm:text-sm">Colaboración CERN</p>
       <h2 class="mt-2 text-4xl font-extrabold uppercase tracking-[0.08em] text-white sm:text-5xl md:text-6xl">Agenda <span class="text-[#10b981]">2026</span></h2>
       <p class="mt-5 flex flex-wrap items-center gap-2 text-sm font-light text-slate-100/85 sm:text-base">
         <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-white/10">
@@ -323,7 +331,7 @@
             </div>
             <div class="agenda26-row">
               <span class="agenda26-time">14:30</span>
-              <span class="agenda26-event">Software y computing</span>
+              <span class="agenda26-event">Software y cómputo</span>
             </div>
             <div class="agenda26-row">
               <span class="agenda26-time">16:30</span>
@@ -349,7 +357,7 @@
             <div class="mb-3 inline-flex rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-amber-700">Día Social</div>
             <div class="agenda26-row">
               <span class="agenda26-time text-amber-700">09:00</span>
-              <span class="agenda26-event">Detector Upgrade HL-LHC</span>
+              <span class="agenda26-event">Actualización del detector HL-LHC</span>
             </div>
             <div class="agenda26-row agenda26-row-social">
               <span class="agenda26-time text-amber-700">12:00</span>
@@ -391,7 +399,7 @@
             </div>
             <div class="agenda26-row">
               <span class="agenda26-time">15:00</span>
-              <span class="agenda26-event">Machine Learning en HEP</span>
+              <span class="agenda26-event">Aprendizaje automático en HEP</span>
             </div>
             <div class="agenda26-row">
               <span class="agenda26-time">18:30</span>
@@ -538,6 +546,56 @@
 
 <div class="divider"></div>
 
+<section class="info-gateway" aria-labelledby="info-gateway-title">
+  <div class="info-gateway-shell">
+    <div class="info-gateway-intro">
+      <p class="section-label">Planea tu visita</p>
+      <h2 class="section-title" id="info-gateway-title">Hub de participantes</h2>
+      <p data-en="All operational details: registration, payments, transport, visas, and local guide.">Todo lo operativo: registro, pagos, transporte, visa y guía local.</p>
+      <div class="info-gateway-actions">
+        <a class="btn-primary" href="registration.html" data-en="Go to registration">Ir a registro</a>
+        <a class="btn-secondary gateway-secondary" href="event-info.html" data-en="View general information">Ver información general</a>
+      </div>
+    </div>
+
+    <aside class="info-gateway-panel" aria-label="Resumen del evento">
+      <span>CMS Week México 2026</span>
+      <strong>7-11 Dic · Mérida</strong>
+      <p>Sesiones presenciales con acceso virtual, aviso de grabación y logística centralizada para participantes.</p>
+    </aside>
+
+    <div class="info-gateway-grid">
+      <a class="info-gateway-card info-gateway-card--wide" href="event-info.html">
+        <span>Vista general</span>
+        <strong>Evento y acceso virtual</strong>
+        <p>Fecha, horario, sede, Zoom, hosts y aviso de fotografías.</p>
+      </a>
+      <a class="info-gateway-card" href="registration.html">
+        <span>Registro</span>
+        <strong>Cuotas y pago</strong>
+        <p>Fechas límite, cuotas por persona y link de Mercado Pago.</p>
+      </a>
+      <a class="info-gateway-card" href="travel.html">
+        <span>Viaje</span>
+        <strong>Cómo llegar</strong>
+        <p>Mérida MID, Cancún CUN, ADO, taxi y Va y Ven.</p>
+      </a>
+      <a class="info-gateway-card" href="visa.html">
+        <span>Visa</span>
+        <strong>Requisitos</strong>
+        <p>Exenciones, FMM, embajadas y cartas de invitación.</p>
+      </a>
+      <a class="info-gateway-card" href="local-guide.html">
+        <span>Mérida</span>
+        <strong>Guía local</strong>
+        <p>Moneda, transporte, propinas, clima y consejos prácticos.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <section class="partners-logos" aria-labelledby="partners-logos-title">
   <p class="section-label">Instituciones participantes</p>
   <h2 class="section-title" id="partners-logos-title">Universidades y colaboración</h2>
@@ -549,6 +607,8 @@
       <figure class="logo-card"><img src="Logos/CMSlogo_color_label_1024_May2014.png" alt="Logo de CMS"></figure>
       <figure class="logo-card"><img src="Logos/Logo_de_la_Universidad_de_Sonora.svg-2.png" alt="Logo de la Universidad de Sonora"></figure>
       <figure class="logo-card"><img src="Logos/Logo_Universidad_Iberoamericana.svg.png" alt="Logo de la Universidad Iberoamericana"></figure>
+      <figure class="logo-card"><img src="Logos/DPC_smf_logo.png" alt="Logo de la División de Partículas y Campos de la SMF"></figure>
+      <figure class="logo-card"><img src="Logos/SMF_logo.png" alt="Logo de la Sociedad Mexicana de Física"></figure>
       <figure class="logo-card"><img src="Logos/UADY_logo.png" alt="Logo de la UADY"></figure>
     </div>
     <div class="logos-track" aria-hidden="true">
@@ -558,6 +618,8 @@
       <figure class="logo-card"><img src="Logos/CMSlogo_color_label_1024_May2014.png" alt=""></figure>
       <figure class="logo-card"><img src="Logos/Logo_de_la_Universidad_de_Sonora.svg-2.png" alt=""></figure>
       <figure class="logo-card"><img src="Logos/Logo_Universidad_Iberoamericana.svg.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/DPC_smf_logo.png" alt=""></figure>
+      <figure class="logo-card"><img src="Logos/SMF_logo.png" alt=""></figure>
       <figure class="logo-card"><img src="Logos/UADY_logo.png" alt=""></figure>
     </div>
   </div>
@@ -572,8 +634,8 @@
     <h2 class="register-title">¿Listo para<br>estar ahí?</h2>
     <p class="register-sub">Regístrate en la CMS Week Americas México 2026. Cupo limitado para participantes de la colaboración CMS y físicos invitados de la región.</p>
     <div class="btn-group">
-      <button class="btn-primary" onclick="alert('¡Pronto abrirá el registro oficial!')">Registrarme</button>
-      <button class="btn-secondary" onclick="alert('Info de logística próximamente')">Información logística</button>
+      <a class="btn-primary" href="registration.html">Registrarme</a>
+      <a class="btn-secondary" href="travel.html">Información logística</a>
     </div>
   </div>
 </div>
@@ -587,6 +649,267 @@
 </footer>
 
 <script>
+(() => {
+  const languageToggle = document.querySelector('[data-language-toggle]');
+  const storageKey = 'cms-week-language';
+  let currentLanguage = 'es';
+
+  const translations = [
+    { es: 'Acerca de', en: 'About' },
+    { es: 'Sede', en: 'Venue' },
+    { es: 'Información', en: 'Information' },
+    { es: 'Info participantes', en: 'Participant info' },
+    { es: 'Registro', en: 'Registration' },
+    { es: 'Ir al inicio', en: 'Go to home' },
+    { es: 'Américas · México', en: 'Americas · Mexico' },
+    { es: '7 al 11 de diciembre de 2026 · Mérida, Yucatán, México', en: 'December 7-11, 2026 · Mérida, Yucatán, Mexico' },
+    { es: 'Registrarme ahora', en: 'Register now' },
+    { es: 'bajar', en: 'scroll' },
+    { es: '¿Qué es la CMS Week?', en: 'What is CMS Week?' },
+    { es: 'La física', en: 'Particle' },
+    { es: 'de partículas', en: 'physics' },
+    { es: 'en México', en: 'in Mexico' },
+    { es: 'La', en: 'The' },
+    { es: 'es el encuentro regional de la colaboración del detector Compact Muon Solenoid del CERN. Por primera vez en México, reunirá a físicos, ingenieros y estudiantes de América y el mundo.', en: 'is the regional meeting of CERN\'s Compact Muon Solenoid detector collaboration. For the first time in Mexico, it will bring together physicists, engineers, and students from the Americas and around the world.' },
+    { es: 'Mérida, la', en: 'Mérida, the' },
+    { es: 'Ciudad Blanca', en: 'White City' },
+    { es: 'de Yucatán, será el epicentro de debates científicos de frontera, desde el bosón de Higgs hasta búsquedas de nueva física más allá del Modelo Estándar.', en: 'of Yucatán, will be the epicenter of frontier scientific discussions, from the Higgs boson to searches for new physics beyond the Standard Model.' },
+    { es: 'Participantes esperados', en: 'Expected participants' },
+    { es: 'Países representados', en: 'Countries represented' },
+    { es: 'Días de sesiones científicas', en: 'Days of scientific sessions' },
+    { es: 'Colaboración CERN', en: 'CERN Collaboration' },
+    { es: 'Mérida, Yucatán, México • Centro de Convenciones Siglo XXI', en: 'Mérida, Yucatán, Mexico • Siglo XXI Convention Center' },
+    { es: 'Próximo Evento', en: 'Upcoming Event' },
+    { es: 'Diciembre 07 - 11', en: 'December 07-11' },
+    { es: 'LUN', en: 'MON' },
+    { es: 'MAR', en: 'TUE' },
+    { es: 'MIE', en: 'WED' },
+    { es: 'JUE', en: 'THU' },
+    { es: 'VIE', en: 'FRI' },
+    { es: '07 Dic', en: 'Dec 07' },
+    { es: '08 Dic', en: 'Dec 08' },
+    { es: '09 Dic', en: 'Dec 09' },
+    { es: '10 Dic', en: 'Dec 10' },
+    { es: '11 Dic', en: 'Dec 11' },
+    { es: 'Registro y bienvenida', en: 'Registration and welcome' },
+    { es: 'Apertura institucional', en: 'Institutional opening' },
+    { es: 'Plenaria: Estado de CMS', en: 'Plenary: CMS status' },
+    { es: 'Recepción de bienvenida', en: 'Welcome reception' },
+    { es: 'Plenaria de física Run-3', en: 'Run 3 physics plenary' },
+    { es: 'Grupos de trabajo de trigger', en: 'Trigger working groups' },
+    { es: 'Software y cómputo', en: 'Software and computing' },
+    { es: 'Sesiones paralelas', en: 'Parallel sessions' },
+    { es: 'Día Social', en: 'Social Day' },
+    { es: 'Actualización del detector HL-LHC', en: 'HL-LHC detector upgrade' },
+    { es: 'Excursión Cultural Maya', en: 'Mayan Cultural Excursion' },
+    { es: 'Conferencia pública', en: 'Public lecture' },
+    { es: 'Cena de colaboración', en: 'Collaboration dinner' },
+    { es: 'Nuevos resultados de física', en: 'New physics results' },
+    { es: 'Sesiones B-physics', en: 'B-physics sessions' },
+    { es: 'Aprendizaje automático en HEP', en: 'Machine learning in HEP' },
+    { es: 'Sesión de pósters', en: 'Poster session' },
+    { es: 'Plenaria de cierre', en: 'Closing plenary' },
+    { es: 'Resultados y perspectivas', en: 'Results and outlook' },
+    { es: 'Clausura oficial', en: 'Official closing' },
+    { es: 'Sede Oficial 2026', en: 'Official Venue 2026' },
+    { es: 'Del Macrocosmos al Microcosmos', en: 'From Macrocosm to Microcosm' },
+    { es: 'Desde la astronomía Maya hasta el detector CMS del CERN, esta sede conecta dos formas de mirar el universo: la escala cósmica y la escala subatómica. En Yucatán, la observación del cielo fue ciencia de precisión mucho antes de la física moderna.', en: 'From Mayan astronomy to CERN\'s CMS detector, this venue connects two ways of looking at the universe: the cosmic scale and the subatomic scale. In Yucatán, sky observation was precision science long before modern physics.' },
+    { es: 'La CMS Week en Mérida propone ese diálogo histórico: estudiar partículas fundamentales con tecnología de frontera en una región donde la relación entre tiempo, geometría y observación astronómica ya era parte de la cultura científica local.', en: 'CMS Week in Mérida proposes that historical dialogue: studying fundamental particles with frontier technology in a region where the relationship between time, geometry, and astronomical observation was already part of the local scientific culture.' },
+    { es: 'Datos logísticos de la sede', en: 'Venue logistics' },
+    { es: 'Aeropuerto', en: 'Airport' },
+    { es: 'Internacional de Mérida (MID)', en: 'Mérida International Airport (MID)' },
+    { es: 'Centro de Convenciones Siglo XXI', en: 'Siglo XXI Convention Center' },
+    { es: 'Clima', en: 'Weather' },
+    { es: '~26°C en diciembre, seco-cálido', en: '~26°C in December, dry and warm' },
+    { es: 'Entorno', en: 'Surroundings' },
+    { es: 'A 2h de Chichén Itzá y zona de cenotes', en: '2h from Chichén Itzá and the cenote area' },
+    { es: 'Carrusel de imágenes de Mérida y Yucatán', en: 'Image carousel of Mérida and Yucatán' },
+    { es: 'Vista urbana de Mérida al atardecer', en: 'Urban view of Mérida at sunset' },
+    { es: 'Centro histórico de Mérida', en: 'Historic center of Mérida' },
+    { es: 'Panorámica de Mérida en formato webp', en: 'Panoramic view of Mérida' },
+    { es: 'Panorámica urbana de Mérida', en: 'Urban panorama of Mérida' },
+    { es: 'Arquitectura colonial en Mérida, Yucatán', en: 'Colonial architecture in Mérida, Yucatán' },
+    { es: 'Arquitectura colonial y vida local', en: 'Colonial architecture and local life' },
+    { es: 'Pirámide de Chichén Itzá en Yucatán', en: 'Chichén Itzá pyramid in Yucatán' },
+    { es: 'Patrimonio científico y cultural Maya', en: 'Mayan scientific and cultural heritage' },
+    { es: 'Paisaje de Yucatán en formato webp', en: 'Yucatán landscape' },
+    { es: 'Paisaje natural de Yucatán', en: 'Natural landscape of Yucatán' },
+    { es: 'Escena representativa de Mérida y su entorno', en: 'Representative scene of Mérida and its surroundings' },
+    { es: 'Mérida y su entorno regional', en: 'Mérida and its regional surroundings' },
+    { es: 'Selecciona una imagen de la sede', en: 'Select a venue image' },
+    { es: 'Ver imagen 1 de 6', en: 'View image 1 of 6' },
+    { es: 'Ver imagen 2 de 6', en: 'View image 2 of 6' },
+    { es: 'Ver imagen 3 de 6', en: 'View image 3 of 6' },
+    { es: 'Ver imagen 4 de 6', en: 'View image 4 of 6' },
+    { es: 'Ver imagen 5 de 6', en: 'View image 5 of 6' },
+    { es: 'Ver imagen 6 de 6', en: 'View image 6 of 6' },
+    { es: 'Impacto de Chicxulub', en: 'Chicxulub Impact' },
+    { es: 'El cráter de ~180 km, ubicado en la península, es una de las evidencias geológicas más estudiadas sobre eventos de extinción masiva.', en: 'The ~180 km crater, located on the peninsula, is one of the most studied geological records of mass extinction events.' },
+    { es: 'Alineación Estelar', en: 'Stellar Alignment' },
+    { es: 'La arquitectura Maya integró observación astronómica precisa para ciclos solares y rituales, con geometrías orientadas al cielo.', en: 'Mayan architecture integrated precise astronomical observation for solar cycles and rituals, with geometries oriented toward the sky.' },
+    { es: 'El sistema de cenotes revela la estructura kárstica del subsuelo yucateco, clave para hidrología, clima regional y registro paleoambiental.', en: 'The cenote system reveals the karst structure of the Yucatán subsurface, key to hydrology, regional climate, and paleoenvironmental records.' },
+    { es: 'Instituciones participantes', en: 'Participating institutions' },
+    { es: 'Universidades y colaboración', en: 'Universities and collaboration' },
+    { es: 'Carrusel automático de logos institucionales', en: 'Automatic carousel of institutional logos' },
+    { es: 'Logo de la BUAP', en: 'BUAP logo' },
+    { es: 'Logo del CERN', en: 'CERN logo' },
+    { es: 'Logo del CINVESTAV', en: 'CINVESTAV logo' },
+    { es: 'Logo de CMS', en: 'CMS logo' },
+    { es: 'Logo de la Universidad de Sonora', en: 'University of Sonora logo' },
+    { es: 'Logo de la Universidad Iberoamericana', en: 'Universidad Iberoamericana logo' },
+    { es: 'Logo de la División de Partículas y Campos de la SMF', en: 'SMF Division of Particles and Fields logo' },
+    { es: 'Logo de la Sociedad Mexicana de Física', en: 'Mexican Physical Society logo' },
+    { es: 'Logo de la UADY', en: 'UADY logo' },
+    { es: 'Planea tu visita', en: 'Plan your visit' },
+    { es: 'Información práctica', en: 'Practical information' },
+    { es: 'Hub de participantes', en: 'Participant hub' },
+    { es: 'Todo lo operativo vive en páginas separadas para que la landing se mantenga ligera: registro, pagos, transporte, visa y guía local.', en: 'All operational details live on separate pages so the landing stays light: registration, payments, transportation, visas, and local guide.' },
+    { es: 'Todo lo operativo: registro, pagos, transporte, visa y guía local.', en: 'All operational details: registration, payments, transport, visas, and local guide.' },
+    { es: 'Ir a registro', en: 'Go to registration' },
+    { es: 'Ver información general', en: 'View general information' },
+    { es: 'Resumen del evento', en: 'Event summary' },
+    { es: 'CMS Week México 2026', en: 'CMS Week Mexico 2026' },
+    { es: '7-11 Dic · Mérida', en: 'Dec 7-11 · Mérida' },
+    { es: 'Sesiones presenciales con acceso virtual, aviso de grabación y logística centralizada para participantes.', en: 'In-person sessions with virtual access, recording notice, and centralized logistics for participants.' },
+    { es: 'Vista general', en: 'General overview' },
+    { es: 'Evento y acceso virtual', en: 'Event and virtual access' },
+    { es: 'Fecha, horario, sede, Zoom, hosts y aviso de fotografías.', en: 'Date, time, venue, Zoom, hosts, and photo notice.' },
+    { es: 'Registro y pagos', en: 'Registration and fees' },
+    { es: 'Cuotas y pago', en: 'Fees and payment' },
+    { es: 'Fechas límite, cuotas por persona y link de Mercado Pago.', en: 'Deadlines, per-person fees, and Mercado Pago link.' },
+    { es: 'Fechas, cuotas y pago', en: 'Dates, fees, and payment' },
+    { es: 'Cómo llegar', en: 'How to get there' },
+    { es: 'Viaje', en: 'Travel' },
+    { es: 'Mérida MID, Cancún CUN, ADO, taxi y Va y Ven.', en: 'Mérida MID, Cancun CUN, ADO, taxi, and Va y Ven.' },
+    { es: 'Aeropuertos y transporte', en: 'Airports and transportation' },
+    { es: 'Visados', en: 'Visas' },
+    { es: 'Visa', en: 'Visa' },
+    { es: 'Requisitos', en: 'Requirements' },
+    { es: 'Exenciones, FMM, embajadas y cartas de invitación.', en: 'Exemptions, FMM, embassies, and invitation letters.' },
+    { es: 'Requisitos migratorios', en: 'Immigration requirements' },
+    { es: 'Guía de Mérida', en: 'Mérida guide' },
+    { es: 'Mérida', en: 'Mérida' },
+    { es: 'Moneda, transporte, propinas, clima y consejos prácticos.', en: 'Currency, transport, tipping, weather, and practical tips.' },
+    { es: 'Consejos locales útiles', en: 'Useful local tips' },
+    { es: 'Próximos pasos', en: 'Next steps' },
+    { es: '¿Listo para', en: 'Ready to' },
+    { es: 'estar ahí?', en: 'be there?' },
+    { es: 'Regístrate en la CMS Week Americas México 2026. Cupo limitado para participantes de la colaboración CMS y físicos invitados de la región.', en: 'Register for CMS Week Americas Mexico 2026. Limited capacity for CMS Collaboration participants and invited physicists from the region.' },
+    { es: 'Registrarme', en: 'Register' },
+    { es: 'Información logística', en: 'Logistics information' },
+    { es: 'Mérida, Yucatán · Diciembre 2026 · cms.cern.ch', en: 'Mérida, Yucatán · December 2026 · cms.cern.ch' }
+  ];
+
+  const alerts = {
+    register: {
+      es: '¡Pronto abrirá el registro oficial!',
+      en: 'Official registration will open soon.'
+    },
+    logistics: {
+      es: 'Info de logística próximamente',
+      en: 'Logistics information coming soon.'
+    }
+  };
+
+  const dictionary = new Map();
+  translations.forEach((entry) => {
+    dictionary.set(entry.es, entry);
+    dictionary.set(entry.en, entry);
+  });
+
+  const setPreservingSpacing = (node, value) => {
+    const current = node.nodeValue;
+    const leading = current.match(/^\s*/)?.[0] || '';
+    const trailing = current.match(/\s*$/)?.[0] || '';
+    node.nodeValue = `${leading}${value}${trailing}`;
+  };
+
+  const translateTextNodes = (lang) => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parent = node.parentElement;
+        if (!parent || ['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(parent.tagName)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    nodes.forEach((node) => {
+      const entry = dictionary.get(node.nodeValue.trim());
+      if (entry) setPreservingSpacing(node, entry[lang]);
+    });
+  };
+
+  const translateAttributes = (lang) => {
+    document.querySelectorAll('[aria-label], [alt], [title]').forEach((element) => {
+      ['aria-label', 'alt', 'title'].forEach((attribute) => {
+        const value = element.getAttribute(attribute);
+        if (!value) return;
+        const entry = dictionary.get(value.trim());
+        if (entry) element.setAttribute(attribute, entry[lang]);
+      });
+    });
+  };
+
+  const storeLanguage = (lang) => {
+    try {
+      window.localStorage.setItem(storageKey, lang);
+    } catch {
+      // Storage can be unavailable in stricter browser contexts.
+    }
+  };
+
+  const getStoredLanguage = () => {
+    try {
+      return window.localStorage.getItem(storageKey);
+    } catch {
+      return null;
+    }
+  };
+
+  const applyLanguage = (lang) => {
+    currentLanguage = lang === 'en' ? 'en' : 'es';
+    document.documentElement.lang = currentLanguage;
+    document.body.dataset.lang = currentLanguage;
+    document.title = currentLanguage === 'en'
+      ? 'CMS Week - Mérida, Yucatán 2026'
+      : 'CMS Week - Mérida, Yucatán 2026';
+
+    translateTextNodes(currentLanguage);
+    translateAttributes(currentLanguage);
+
+    if (languageToggle) {
+      languageToggle.setAttribute('aria-pressed', currentLanguage === 'en' ? 'true' : 'false');
+      languageToggle.setAttribute(
+        'aria-label',
+        currentLanguage === 'en' ? 'Switch language to Spanish' : 'Cambiar idioma a inglés'
+      );
+    }
+
+    storeLanguage(currentLanguage);
+  };
+
+  document.querySelectorAll('[data-alert]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const message = alerts[button.dataset.alert]?.[currentLanguage];
+      if (message) window.alert(message);
+    });
+  });
+
+  if (languageToggle) {
+    languageToggle.addEventListener('click', () => {
+      applyLanguage(currentLanguage === 'en' ? 'es' : 'en');
+    });
+  }
+
+  applyLanguage(getStoredLanguage() === 'en' ? 'en' : 'es');
+})();
+
 (() => {
   const hero = document.querySelector('.hero');
   if (!hero) return;
