@@ -262,7 +262,7 @@
             <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2z"/>
           </svg>
         </span>
-        <span>Mérida, Yucatán, México • Centro de Convenciones Siglo XXI</span>
+        <span>Mérida, Yucatán, México • Holiday Inn Merida, an IHG Hotel</span>
       </p>
 
       <div class="mt-7 inline-flex items-center gap-3 rounded-2xl border border-white/30 bg-white/10 px-5 py-3 text-sm shadow-[0_14px_40px_rgba(2,6,23,0.18)] backdrop-blur-md">
@@ -461,7 +461,7 @@
           </article>
           <article class="venue26-meta">
             <h4>Sede</h4>
-            <p>Centro de Convenciones Siglo XXI</p>
+            <p>Holiday Inn Merida, an IHG Hotel</p>
           </article>
           <article class="venue26-meta">
             <h4>Clima</h4>
@@ -573,12 +573,12 @@
       <a class="info-gateway-card" href="registration.html">
         <span>Registro</span>
         <strong>Cuotas y pago</strong>
-        <p>Fechas límite, cuotas por persona y link de Mercado Pago.</p>
+        <p>Fechas límite, cuotas por persona y registro oficial en Indico.</p>
       </a>
       <a class="info-gateway-card" href="travel.html">
         <span>Viaje</span>
         <strong>Cómo llegar</strong>
-        <p>Mérida MID, Cancún CUN, ADO, taxi y Va y Ven.</p>
+        <p>Mérida MID, Cancún CUN, Tren Maya, ADO, taxi y Va y Ven.</p>
       </a>
       <a class="info-gateway-card" href="visa.html">
         <span>Visa</span>
@@ -652,7 +652,7 @@
 (() => {
   const languageToggle = document.querySelector('[data-language-toggle]');
   const storageKey = 'cms-week-language';
-  let currentLanguage = 'es';
+  let currentLanguage = 'en';
 
   const translations = [
     { es: 'Acerca de', en: 'About' },
@@ -678,7 +678,7 @@
     { es: 'Países representados', en: 'Countries represented' },
     { es: 'Días de sesiones científicas', en: 'Days of scientific sessions' },
     { es: 'Colaboración CERN', en: 'CERN Collaboration' },
-    { es: 'Mérida, Yucatán, México • Centro de Convenciones Siglo XXI', en: 'Mérida, Yucatán, Mexico • Siglo XXI Convention Center' },
+    { es: 'Mérida, Yucatán, México • Holiday Inn Merida, an IHG Hotel', en: 'Mérida, Yucatán, Mexico • Holiday Inn Merida, an IHG Hotel' },
     { es: 'Próximo Evento', en: 'Upcoming Event' },
     { es: 'Diciembre 07 - 11', en: 'December 07-11' },
     { es: 'LUN', en: 'MON' },
@@ -718,7 +718,7 @@
     { es: 'Datos logísticos de la sede', en: 'Venue logistics' },
     { es: 'Aeropuerto', en: 'Airport' },
     { es: 'Internacional de Mérida (MID)', en: 'Mérida International Airport (MID)' },
-    { es: 'Centro de Convenciones Siglo XXI', en: 'Siglo XXI Convention Center' },
+    { es: 'Holiday Inn Merida, an IHG Hotel', en: 'Holiday Inn Merida, an IHG Hotel' },
     { es: 'Clima', en: 'Weather' },
     { es: '~26°C en diciembre, seco-cálido', en: '~26°C in December, dry and warm' },
     { es: 'Entorno', en: 'Surroundings' },
@@ -776,11 +776,11 @@
     { es: 'Fecha, horario, sede, Zoom, hosts y aviso de fotografías.', en: 'Date, time, venue, Zoom, hosts, and photo notice.' },
     { es: 'Registro y pagos', en: 'Registration and fees' },
     { es: 'Cuotas y pago', en: 'Fees and payment' },
-    { es: 'Fechas límite, cuotas por persona y link de Mercado Pago.', en: 'Deadlines, per-person fees, and Mercado Pago link.' },
+    { es: 'Fechas límite, cuotas por persona y registro oficial en Indico.', en: 'Deadlines, per-person fees, and official registration in Indico.' },
     { es: 'Fechas, cuotas y pago', en: 'Dates, fees, and payment' },
     { es: 'Cómo llegar', en: 'How to get there' },
     { es: 'Viaje', en: 'Travel' },
-    { es: 'Mérida MID, Cancún CUN, ADO, taxi y Va y Ven.', en: 'Mérida MID, Cancun CUN, ADO, taxi, and Va y Ven.' },
+    { es: 'Mérida MID, Cancún CUN, Tren Maya, ADO, taxi y Va y Ven.', en: 'Mérida MID, Cancun CUN, Tren Maya, ADO, taxi, and Va y Ven.' },
     { es: 'Aeropuertos y transporte', en: 'Airports and transportation' },
     { es: 'Visados', en: 'Visas' },
     { es: 'Visa', en: 'Visa' },
@@ -802,8 +802,8 @@
 
   const alerts = {
     register: {
-      es: '¡Pronto abrirá el registro oficial!',
-      en: 'Official registration will open soon.'
+      es: 'El registro oficial se realiza en Indico.',
+      en: 'Official registration is handled through Indico.'
     },
     logistics: {
       es: 'Info de logística próximamente',
@@ -907,7 +907,7 @@
     });
   }
 
-  applyLanguage(getStoredLanguage() === 'en' ? 'en' : 'es');
+  applyLanguage(getStoredLanguage() === 'es' ? 'es' : 'en');
 })();
 
 (() => {

@@ -1,7 +1,7 @@
 (() => {
   const storageKey = 'cms-week-language';
   const languageToggle = document.querySelector('[data-language-toggle]');
-  let currentLanguage = 'es';
+  let currentLanguage = 'en';
 
   const getStoredLanguage = () => {
     try {
@@ -81,7 +81,7 @@
     });
   }
 
-  applyLanguage(getStoredLanguage() === 'en' ? 'en' : 'es');
+  applyLanguage(getStoredLanguage() === 'es' ? 'es' : 'en');
 })();
 
 (() => {
