@@ -203,23 +203,27 @@
 <section id="about">
   <div class="about-grid">
     <div class="about-text">
-      <p class="section-label">¿Qué es la CMS Week?</p>
-      <h2 class="section-title">La física<br>de partículas<br>en México</h2>
-      <p>La <strong>CMS Week Americas</strong> es el encuentro regional de la colaboración del detector Compact Muon Solenoid del CERN. Por primera vez en México, reunirá a físicos, ingenieros y estudiantes de América y el mundo.</p>
-      <p>Mérida, también llamada la <strong>Ciudad Blanca</strong> de Yucatán, será el epicentro de debates científicos de frontera, desde el bosón de Higgs hasta búsquedas de nueva física más allá del Modelo Estándar.</p>
+      <p class="section-label" data-en="What is CMS Week?">¿Qué es la CMS Week?</p>
+      <h2 class="section-title" data-en="Particle<br>physics<br>in Mexico">La física<br>de partículas<br>en México</h2>
+      <p data-en="The <strong>CMS Week Americas</strong> is the international meeting of CERN's Compact Muon Solenoid detector collaboration. For the first time in Mexico, it will bring together physicists, engineers, and students from the Americas and around the world.">La <strong>CMS Week Americas</strong> es el encuentro internacional de la colaboración del detector Compact Muon Solenoid del CERN. Por primera vez en México, reunirá a físicos, ingenieros y estudiantes de América y el mundo.</p>
+      <p data-en="Mérida, also known as the <strong>White City</strong> of Yucatán, will be the epicenter of frontier scientific discussions, from the Higgs boson to searches for new physics beyond the Standard Model.">Mérida, también conocida como la <strong>Ciudad Blanca</strong> de Yucatán, será el epicentro de debates científicos de frontera, desde el bosón de Higgs hasta búsquedas de nueva física más allá del Modelo Estándar.</p>
     </div>
     <div class="about-stats">
       <div class="stat-card">
-        <div class="stat-num"><span class="stat-counter" data-target="500">500</span><span class="stat-plus">+</span></div>
-        <div class="stat-label">Participantes esperados</div>
+        <div class="stat-num"><span class="stat-counter" data-target="300">300</span><span class="stat-plus">+</span></div>
+        <div class="stat-label" data-en="Expected participants">Participantes esperados</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num"><span class="stat-counter" data-target="40">40</span><span class="stat-plus">+</span></div>
-        <div class="stat-label">Países representados</div>
+        <div class="stat-num"><span class="stat-counter" data-target="240">240</span><span class="stat-plus">+</span></div>
+        <div class="stat-label" data-en="Institutions represented">Instituciones representadas</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num"><span class="stat-counter" data-target="5">5</span></div>
-        <div class="stat-label">Días de sesiones científicas</div>
+        <div class="stat-num"><span class="stat-counter" data-target="50">50</span><span class="stat-plus">+</span></div>
+        <div class="stat-label" data-en="Countries represented">Países representados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="stat-counter" data-target="4">4</span></div>
+        <div class="stat-label" data-en="Days of scientific sessions">Días de sesiones científicas</div>
       </div>
     </div>
   </div>
@@ -670,11 +674,12 @@
     { es: 'de partículas', en: 'physics' },
     { es: 'en México', en: 'in Mexico' },
     { es: 'La', en: 'The' },
-    { es: 'es el encuentro regional de la colaboración del detector Compact Muon Solenoid del CERN. Por primera vez en México, reunirá a físicos, ingenieros y estudiantes de América y el mundo.', en: 'is the regional meeting of CERN\'s Compact Muon Solenoid detector collaboration. For the first time in Mexico, it will bring together physicists, engineers, and students from the Americas and around the world.' },
-    { es: 'Mérida, la', en: 'Mérida, the' },
+    { es: 'es el encuentro internacional de la colaboración del detector Compact Muon Solenoid del CERN. Por primera vez en México, reunirá a físicos, ingenieros y estudiantes de América y el mundo.', en: 'is the international meeting of CERN\'s Compact Muon Solenoid detector collaboration. For the first time in Mexico, it will bring together physicists, engineers, and students from the Americas and around the world.' },
+    { es: 'Mérida, también conocida como la', en: 'Mérida, also known as the' },
     { es: 'Ciudad Blanca', en: 'White City' },
     { es: 'de Yucatán, será el epicentro de debates científicos de frontera, desde el bosón de Higgs hasta búsquedas de nueva física más allá del Modelo Estándar.', en: 'of Yucatán, will be the epicenter of frontier scientific discussions, from the Higgs boson to searches for new physics beyond the Standard Model.' },
     { es: 'Participantes esperados', en: 'Expected participants' },
+    { es: 'Instituciones representadas', en: 'Institutions represented' },
     { es: 'Países representados', en: 'Countries represented' },
     { es: 'Días de sesiones científicas', en: 'Days of scientific sessions' },
     { es: 'Colaboración CERN', en: 'CERN Collaboration' },
@@ -817,11 +822,22 @@
     dictionary.set(entry.en, entry);
   });
 
+  const inlineTranslations = Array.from(document.querySelectorAll('[data-en]'));
+  inlineTranslations.forEach((element) => {
+    if (!element.dataset.es) element.dataset.es = element.innerHTML;
+  });
+
   const setPreservingSpacing = (node, value) => {
     const current = node.nodeValue;
     const leading = current.match(/^\s*/)?.[0] || '';
     const trailing = current.match(/\s*$/)?.[0] || '';
     node.nodeValue = `${leading}${value}${trailing}`;
+  };
+
+  const translateInlineElements = (lang) => {
+    inlineTranslations.forEach((element) => {
+      element.innerHTML = lang === 'en' ? element.dataset.en : element.dataset.es;
+    });
   };
 
   const translateTextNodes = (lang) => {
@@ -832,6 +848,7 @@
         if (!parent || ['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(parent.tagName)) {
           return NodeFilter.FILTER_REJECT;
         }
+        if (parent.closest('[data-en]')) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
@@ -880,6 +897,7 @@
       ? 'CMS Week - Mérida, Yucatán 2026'
       : 'CMS Week - Mérida, Yucatán 2026';
 
+    translateInlineElements(currentLanguage);
     translateTextNodes(currentLanguage);
     translateAttributes(currentLanguage);
 
