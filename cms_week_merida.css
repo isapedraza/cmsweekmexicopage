@@ -1487,6 +1487,7 @@ section {
   inset: 12% 0 auto;
   height: 1px;
   background: linear-gradient(to right, transparent, rgba(13, 74, 58, 0.22), transparent);
+  display: none;
 }
 
 .info-gateway-shell {
@@ -2171,6 +2172,7 @@ footer {
   border: 1px solid rgba(13, 74, 58, 0.18);
   border-radius: 16px;
   background: rgba(8, 37, 29, 0.04);
+  padding: 28px;
 }
 
 .external-link {
