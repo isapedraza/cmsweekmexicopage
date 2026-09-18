@@ -2365,6 +2365,57 @@ footer {
 
 }
 
+.map-embed {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  border: 1px solid rgba(13, 74, 58, 0.15);
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.route-img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: 0.8rem 0 1rem;
+  object-fit: contain;
+}
+
+.route-card-body {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-top: 0.8rem;
+}
+
+.route-card-body .route-img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.route-card-body ol {
+  flex: 1;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+/* En mobile, que vuelvan a apilarse */
+@media (max-width: 560px) {
+  .route-card-body {
+    flex-direction: column;
+  }
+
+  .route-card-body .route-img {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+
 @media (max-width: 480px) {
   nav:not(.quick-nav) {
     padding: 0.6rem 1rem;
